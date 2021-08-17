@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class="jumbotron">
+        <h1>Transaction History</h1>
+    </div>
+    <div class="container">
+
+        <div class="section">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Stock</th>
+                        <th>Stock Price</th>
+                        <th>Buy/Sell Shares</th>
+                        <th>Money Gain/Lost</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for transaction in transData %}
+                    <tr>
+                        <th>{{ transaction.stock }}</th>
+                        <th>{{ transaction.price | usd }}</th>
+                        <th>{{ transaction.shares }}</th>
+                        <th>{{ (-transaction.price * transaction.shares) | usd }}</th>
+                        <th>{{ transaction.date }}</th>
+                        <th>{{ transaction.time }}</th>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+sort1 uses: BUBBLE SORT
+
+How do you know?: Last remaining algorithm
+
+sort2 uses: MERGE
+
+How do you know?: Both random and reversed are significantly shorter than sort1 and sort3
+
+sort3 uses: SELECTION SORT
+
+How do you know?: Reversed order is faster

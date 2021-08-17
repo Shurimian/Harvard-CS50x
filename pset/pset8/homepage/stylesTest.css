@@ -1,0 +1,14 @@
+.btn{
+    border-radius: 16px;
+    font-size: 24px;
+}
+
+.btn-outline-primary{
+    color: black;
+    border-color: red;
+}
+
+.btn-outline-primary:hover{
+    background: red;
+    color: invert;
+}

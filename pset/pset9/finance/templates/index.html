@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <div class="jumbotron">
+        <h1>Stock Portfolio</h1>
+    </div>
+    <div class="container">
+
+        <div class="section">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Stock</th>
+                        <th>Shares</th>
+                        <th>Stock Price</th>
+                        <th>Share Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for stockInfo in displayData %}
+                    <tr>
+                        <th>{{ stockInfo.stock }}</th>
+                        <th>{{ stockInfo.shares }}</th>
+                        <th>{{ stockInfo.price | usd }}</th>
+                        <th>{{ stockInfo.value | usd }}</th>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Current Balance</th>
+                        <th>Total Money</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>{{ userCash | usd }}</th>
+                        <th>{{ sumMoney | usd }}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
